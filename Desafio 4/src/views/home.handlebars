@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Agregar Productos</h2>
+        
+            <input type="text" placeholder="Nombre" id="nombre">
+            <input type="text" placeholder="Descripcion" id="descripcion">
+            <input type="text" placeholder="Codigo" id="codigo">
+            <input type="text" placeholder="Precio" id="precio">
+            <input type="text" placeholder="Estado" id="estado">
+            <input type="text" placeholder="Stock" id="stock">
+            <input type="text" placeholder="Categoria" id="categoria">
+            <input type="text" placeholder="imagen" id="imagen">
+            <button onclick="agregarProducto()">Agregar</button>
+        
+    </div>
+
+    <div>
+        <h2>Listado de Productos</h2>
+        {{#each productos}}
+            <div>
+                <h3>{{nombre}}</h3>
+                <p>{{descripcion}}</p>
+                <p>{{codigo}}</p>
+                <button>Eliminar</button>
+            </div>
+        {{/each}}
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+</html>

@@ -21,16 +21,15 @@ router.get('/api/products/:id', (req, res) => {
 router.post('/api/products', (req, res) => {
     let product = req.body
     console.log(req.body)
-    let contador = products.length + 1
     product = {
-        "title": `Producto ${contador}`,
-        "description": `Descripción del producto ${contador}`,
-        "code": "DEF456",
-        "price": 300,
-        "status": true,
-        "stock": 20,
-        "category": "Electrónica",
-        "thumbnail": []
+        "title": product.title,
+        "description": product.description,
+        "code": product.code,
+        "price": product.price,
+        "status": product.status,
+        "stock": product.stock,
+        "category": product.category,
+        "thumbnail": [product.thumbnail],
     }
     addId(product)
     products.push(product)
